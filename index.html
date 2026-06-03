@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=750, initial-scale=1.0">
+    <meta name="viewport" content="width=750, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>湖水和朋友们·群日报 2026-06-03</title>
     <script>
     var _hmt = _hmt || [];
@@ -14,457 +14,495 @@
     })();
     </script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin:0; padding:0; box-sizing: border-box; }
         body {
             width: 750px;
             margin: 0 auto;
             background: #ede5d0;
             font-family: "Songti SC", "SimSun", "STSong", serif;
-            color: #1a1a1a;
+            color: #1a1815;
             line-height: 1.8;
+            padding-bottom: 40px;
         }
-        /* 头部 */
+        /* 报头 */
         .header {
-            background: #b8443c;
-            color: #fff;
-            padding: 40px 50px 30px;
-            border-bottom: 6px solid #1a1a1a;
+            border: 3px solid #1a1815;
+            margin: 12px 12px 0 12px;
+            padding: 14px 18px 10px 18px;
+            background: #1a1815;
+            color: #ede5d0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
-        .header .date {
-            font-size: 14px;
-            letter-spacing: 3px;
-            opacity: 0.85;
-            margin-bottom: 8px;
-        }
-        .header h1 {
-            font-size: 38px;
+        .header-left { }
+        .header-title {
+            font-size: 22px;
             font-weight: 900;
             letter-spacing: 4px;
-            line-height: 1.3;
+            line-height: 1.2;
         }
-        .header .subtitle {
-            font-size: 15px;
-            margin-top: 10px;
-            opacity: 0.8;
-            letter-spacing: 1px;
-        }
-        /* 导语 */
-        .hero {
-            background: #fff;
-            margin: 0;
-            padding: 40px 50px;
-            border-bottom: 3px solid #1a1a1a;
-            position: relative;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            left: 50px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: #b8443c;
-        }
-        .hero p {
-            font-size: 17px;
-            line-height: 2;
-            color: #2a2a2a;
-            padding-left: 20px;
-        }
-        .hero .highlight {
-            color: #b8443c;
-            font-weight: 700;
-        }
-        /* 统计条 */
-        .stats {
-            display: flex;
-            background: #1a1a1a;
-            color: #fff;
-            border-bottom: 3px solid #b8443c;
-        }
-        .stat-item {
-            flex: 1;
-            text-align: center;
-            padding: 20px 10px;
-            border-right: 1px solid #333;
-        }
-        .stat-item:last-child { border-right: none; }
-        .stat-num {
-            font-size: 32px;
-            font-weight: 900;
-            color: #e8c87a;
-        }
-        .stat-label {
-            font-size: 12px;
-            opacity: 0.7;
-            margin-top: 4px;
-            letter-spacing: 1px;
-        }
-        /* 板块 */
-        .section {
-            background: #ede5d0;
-            padding: 35px 50px;
-            border-bottom: 3px solid #1a1a1a;
-        }
-        .section-title {
-            font-size: 20px;
-            font-weight: 900;
-            color: #b8443c;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            padding-left: 16px;
-            border-left: 5px solid #b8443c;
-        }
-        .section-title span {
-            font-size: 13px;
-            color: #888;
-            margin-left: 10px;
-            letter-spacing: 1px;
-        }
-        /* 卡片 */
-        .card {
-            background: #fff;
-            border: 2px solid #1a1a1a;
-            padding: 22px 26px;
-            margin-bottom: 18px;
-            position: relative;
-        }
-        .card::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            width: 28px;
-            height: 28px;
-            border-top: 3px solid #b8443c;
-            border-left: 3px solid #b8443c;
-        }
-        .card-tag {
-            display: inline-block;
-            background: #b8443c;
-            color: #fff;
+        .header-title span { color: #b8443c; }
+        .header-right {
             font-size: 11px;
-            padding: 2px 10px;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .card h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-        .card p {
-            font-size: 14px;
-            color: #444;
-            line-height: 1.9;
-        }
-        .card .source {
-            font-size: 12px;
-            color: #999;
-            margin-top: 10px;
+            opacity: 0.7;
             text-align: right;
+            line-height: 1.6;
         }
-        /* 话题列表 */
-        .topic-list {
-            background: #fff;
-            border: 2px solid #1a1a1a;
-            padding: 5px 0;
-        }
-        .topic-item {
-            padding: 16px 26px;
-            border-bottom: 1px dashed #ccc;
-            display: flex;
-            align-items: flex-start;
-        }
-        .topic-item:last-child { border-bottom: none; }
-        .topic-num {
+        /* 期号装饰线 */
+        .issue-bar {
+            border-left: 3px solid #1a1815;
+            border-right: 3px solid #1a1815;
+            margin: 0 12px;
             background: #b8443c;
-            color: #fff;
-            width: 26px;
-            height: 26px;
-            min-width: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 900;
-            margin-right: 14px;
-            margin-top: 1px;
-        }
-        .topic-content {
-            flex: 1;
-        }
-        .topic-content .q {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-        .topic-content .a {
-            font-size: 13px;
-            color: #666;
-            margin-top: 4px;
-            line-height: 1.7;
-        }
-        .topic-content .speaker {
-            font-size: 12px;
-            color: #b8443c;
-            margin-top: 4px;
-        }
-        /* 知识卡片网格 */
-        .knowledge-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .k-card {
-            background: #fff;
-            border: 2px solid #1a1a1a;
-            padding: 16px 18px;
-            position: relative;
-        }
-        .k-card .icon {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-        .k-card h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: #b8443c;
-            margin-bottom: 6px;
-        }
-        .k-card p {
-            font-size: 12px;
-            color: #555;
-            line-height: 1.7;
-        }
-        /* 底部 */
-        .footer {
-            background: #1a1a1a;
-            color: #999;
+            color: #ede5d0;
             text-align: center;
-            padding: 28px 50px;
-            font-size: 12px;
-            line-height: 2;
+            font-size: 11px;
+            letter-spacing: 6px;
+            padding: 4px 0;
+        }
+        /* 导语条 */
+        .lead-bar {
+            border-left: 3px solid #1a1815;
+            border-right: 3px solid #1a1815;
+            margin: 0 12px;
+            background: #b8443c;
+            color: #ede5d0;
+            padding: 10px 18px;
+            font-size: 13px;
+            line-height: 1.8;
             letter-spacing: 1px;
         }
-        .footer .brand {
-            color: #e8c87a;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 6px;
+        /* 主体内容区 */
+        .main {
+            border: 3px solid #1a1815;
+            border-top: none;
+            margin: 0 12px 12px 12px;
+            padding: 16px 14px 20px 14px;
+            background: #ede5d0;
         }
-        /* CTA */
-        .cta {
-            background: #b8443c;
-            color: #fff;
-            text-align: center;
-            padding: 22px 50px;
-            font-size: 14px;
+        /* 分栏标题 */
+        .section-title {
+            font-size: 15px;
+            font-weight: 900;
+            border-left: 4px solid #b8443c;
+            padding-left: 8px;
+            margin: 18px 0 10px 0;
             letter-spacing: 2px;
         }
-        .cta a {
-            color: #e8c87a;
-            text-decoration: underline;
+        .section-title.first { margin-top: 0; }
+        /* 问答卡片 */
+        .qa-card {
+            border: 2px solid #1a1815;
+            margin-bottom: 10px;
+            background: #f5efe3;
+        }
+        .qa-q {
+            background: #1a1815;
+            color: #ede5d0;
+            padding: 6px 10px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .qa-a {
+            padding: 8px 10px;
+            font-size: 12.5px;
+            line-height: 1.8;
+        }
+        .qa-a .speaker {
+            color: #b8443c;
+            font-weight: 700;
+        }
+        /* 群友疑问 */
+        .doubt-section {
+            border: 2px dashed #b8443c;
+            margin: 14px 0;
+            background: #fefcf5;
+        }
+        .doubt-title {
+            background: #b8443c;
+            color: #ede5d0;
+            padding: 6px 10px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .doubt-item {
+            padding: 8px 10px;
+            border-bottom: 1px dotted #c9b99a;
+            font-size: 12.5px;
+            line-height: 1.8;
+        }
+        .doubt-item:last-child { border-bottom: none; }
+        .doubt-q {
+            color: #1a1815;
+            font-weight: 700;
+        }
+        .doubt-speaker {
+            color: #b8443c;
+            font-weight: 700;
+        }
+        /* 知识卡片 */
+        .kb-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .kb-card {
+            border: 2px solid #1a1815;
+            padding: 8px 10px;
+            background: #f5efe3;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .kb-card .kb-title {
+            font-weight: 900;
+            font-size: 12.5px;
+            margin-bottom: 4px;
+            color: #b8443c;
+        }
+        /* 引言块 */
+        .quote-block {
+            border: 2px solid #1a1815;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            font-size: 12.5px;
+            line-height: 1.9;
+        }
+        .q-black { background: #1a1815; color: #ede5d0; }
+        .q-red   { background: #b8443c; color: #ede5d0; }
+        .q-cream { background: #f5efe3; color: #1a1815; }
+        /* 头条文章 */
+        .article {
+            border: 2px solid #1a1815;
+            margin-bottom: 12px;
+            background: #f5efe3;
+        }
+        .article-head {
+            background: #1a1815;
+            color: #ede5d0;
+            padding: 7px 10px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .article-body {
+            padding: 10px 12px;
+            font-size: 12.5px;
+            line-height: 1.85;
+        }
+        .article-body .hl { color: #b8443c; font-weight: 700; }
+        /* 底栏 */
+        .footer {
+            border: 3px solid #1a1815;
+            margin: 0 12px 12px 12px;
+            padding: 10px 14px;
+            background: #1a1815;
+            color: #ede5d0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+        .footer a { color: #b8443c; text-decoration: none; }
+        /* 分隔线 */
+        .divider {
+            border-top: 2px solid #1a1815;
+            margin: 14px 0;
+        }
+        /*  ASCO 速递栏 */
+        .ascc-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .ascc-item {
+            flex: 1;
+            border: 2px solid #1a1815;
+            padding: 8px 9px;
+            background: #f5efe3;
+            font-size: 11.5px;
+            line-height: 1.7;
+        }
+        .ascc-item .ascc-tag {
+            background: #b8443c;
+            color: #ede5d0;
+            font-size: 10px;
+            padding: 1px 5px;
+            display: inline-block;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+        /* 分割线（装饰） */
+        .deco-line {
+            text-align: center;
+            font-size: 12px;
+            color: #b8443c;
+            letter-spacing: 8px;
+            margin: 12px 0 10px 0;
+            opacity: 0.6;
+        }
+        /* 医生推荐卡片 */
+        .doctor-card {
+            border: 2px solid #1a1815;
+            margin-bottom: 8px;
+            background: #f5efe3;
+            padding: 8px 10px;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+        .doctor-card .doc-name {
+            font-weight: 900;
+            color: #b8443c;
         }
     </style>
 </head>
 <body>
 
-<!-- 头部 -->
+<!-- 报头 -->
 <div class="header">
-    <div class="date">贰零贰陆年 · 陆月叁日</div>
-    <h1>湖水和朋友们<br>·群日报·</h1>
-    <div class="subtitle">泌尿健康5群 · 两日精选</div>
-</div>
-
-<!-- 导语 -->
-<div class="hero">
-    <p>
-        过去两天，5群围绕<span class="highlight">灌注副作用管理</span>、<span class="highlight">二次电切的意义</span>、<span class="highlight">ASCO 2026最新进展</span>展开热烈讨论。群友用亲身经历回答彼此的疑问——「卡介苗灌注第15次出血正常吗？」「二次电切后灌注次数要重新算吗？」「B超查膀胱癌到底靠不靠谱？」——这些问题的答案，散落在446条6月1日的消息和152条6月2日的消息里，我们用这份日报帮你收拢。
-    </p>
-</div>
-
-<!-- 统计 -->
-<div class="stats">
-    <div class="stat-item">
-        <div class="stat-num">598</div>
-        <div class="stat-label">两日消息总量</div>
+    <div class="header-left">
+        <div class="header-title">湖水 和<span>朋友们</span></div>
+        <div style="font-size:11px;opacity:0.5;margin-top:2px;letter-spacing:2px;">· 群日报 ·</div>
     </div>
-    <div class="stat-item">
-        <div class="stat-num">40+</div>
-        <div class="stat-label">活跃发言群友</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-num">6</div>
-        <div class="stat-label">知识卡片发布</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">新群友加入</div>
+    <div class="header-right">
+        <div>泌尿健康5群</div>
+        <div>2026-06-03 · 周三</div>
+        <div>292 条消息</div>
     </div>
 </div>
 
-<!-- 板块一：群友热点讨论 -->
-<div class="section">
-    <div class="section-title">群友关切<span>过去48小时，大家在问什么</span></div>
-    
-    <div class="topic-list">
-        <div class="topic-item">
-            <div class="topic-num">1</div>
-            <div class="topic-content">
-                <div class="q">卡介苗灌注后尿频、尿急、尿痛，正常吗？第15次灌注后轻微出血呢？</div>
-                <div class="a">盼盼分享：今天做了一次卡介苗灌注，从第一次解手到四个小时内上了20次厕所，吃了一片泰诺（加拿大止痛药）并放热水瓶后缓解。群友回音、阎先生、永远的生机均表示轻微出血正常，建议下次灌注前验尿常规。</div>
-                <div class="speaker">▸ 提问：盼盼、回家真好　▸ 回答：回音、阎先生🍎、永远的生机</div>
-            </div>
-        </div>
-        <div class="topic-item">
-            <div class="topic-num">2</div>
-            <div class="topic-content">
-                <div class="q">膀胱复发，自己会有什么感觉？</div>
-                <div class="a">天道酬勤答：没有太大感觉，非要说上感觉，那就是肉眼可能会看到再次血尿——当出现血尿时已经基本复发完成了。灯妈补充：膀胱癌最初基本上毫无征兆，强调定期复查的重要性。</div>
-                <div class="speaker">▸ 提问：无谓（无谓）　▸ 回答：天道酬勤、灯妈</div>
-            </div>
-        </div>
-        <div class="topic-item">
-            <div class="topic-num">3</div>
-            <div class="topic-content">
-                <div class="q">B超查膀胱癌准确吗？复查该做CT还是B超？</div>
-                <div class="a">止园：B超3-5毫米且水平好的医生才能发现，一般医生可能要接近1厘米才能发现。上海潘补充：非肌层浸润型一年做一次CTU，普通体检B超不憋尿查不出。吴*谦据指南：低危一年一次影像，高危每6-12个月一次。</div>
-                <div class="speaker">▸ 讨论：止园、上海潘、吴*谦、天道酬勤</div>
-            </div>
-        </div>
-        <div class="topic-item">
-            <div class="topic-num">4</div>
-            <div class="topic-content">
-                <div class="q">二次电切后，灌注次数需要重新计算吗？</div>
-                <div class="a">刚子反映多个医生说法不一。上海潘（23年手术T1G3未复发）认为诱导灌注8次后进入月灌，二切后不用重新算；龙人一切后灌卡介苗四次、二切后继续，询问后续次数。勇分享自己灌了二次吡柔比星、三次卡介苗后再二次电切。</div>
-                <div class="speaker">▸ 讨论：刚子、上海潘、龙人、勇</div>
-            </div>
-        </div>
-        <div class="topic-item">
-            <div class="topic-num">5</div>
-            <div class="topic-content">
-                <div class="q">丝裂霉素、表柔比星、卡介苗，灌注药有什么区别？</div>
-                <div class="a">刚子询问丝裂霉素与表柔比星的区别。湖水回复：目的一样，都有的，来来回回就这几种药能用。棉花糖糖认为这几个效果应该差不多，除了卡介苗。</div>
-                <div class="speaker">▸ 讨论：刚子、湖水、棉花糖糖</div>
-            </div>
-        </div>
-        <div class="topic-item">
-            <div class="topic-num">6</div>
-            <div class="topic-content">
-                <div class="q">维迪西妥单抗、特瑞普利单抗治疗，需要自己去外面买药吗？医保能报销吗？</div>
-                <div class="a">止园分享自己去医院外面买维迪西妥，医院没有，网上说利于运输储存。小李飞刀答：一般市里都有定点药店，让医生开外购药去那边打；这个药不报销。Tyche询问门特门慢未审批下来能否报销，止园确认门特批了也不能报。</div>
-                <div class="speaker">▸ 讨论：Tyche、止园、小李飞刀</div>
-            </div>
-        </div>
-    </div>
+<!-- 期号条 -->
+<div class="issue-bar">贰零贰陆 · 陆月叁日 · 精选报</div>
+
+<!-- 导语条 -->
+<div class="lead-bar">
+    🫂 本期聚焦「保还是切」的灵魂抉择——三位群友的真实路径（张金明降期保住、向日葵初诊晚期、静待花开新辅助中），以及新辅助 EV 能否「打没肿瘤」的前沿讨论。医生推荐、PD-L1 检测、灌注经验，一天的信息密度，值得慢慢看。
 </div>
 
-<!-- 板块二：知识卡片回顾 -->
-<div class="section" style="background:#fff;">
-    <div class="section-title" style="color:#b8443c;">知识卡片·两日回顾<span>湖水分享，AI提炼</span></div>
-    
-    <div class="knowledge-grid">
-        <div class="k-card">
-            <div class="icon">📌</div>
-            <h4>膀胱癌分类速记</h4>
-            <p>NMIBC：Ta（乳头状）、T1（侵固有层）、CIS（原位癌，54%进展为MIBC）<br>MIBC：T2（侵肌层）、T3-T4（侵膀胱外）<br>⚠️ CIS虽属NMIBC，但按超高危对待</p>
-        </div>
-        <div class="k-card">
-            <div class="icon">🔬</div>
-            <h4>膀胱原位癌（CIS）深度科普</h4>
-            <p>隐匿性强，白光膀胱镜检出率仅50%<br>54%进展为MIBC<br>BCG无应答者肌层进展率高达66%<br>破局：荧光膀胱镜+多点随机活检</p>
-        </div>
-        <div class="k-card">
-            <div class="icon">💊</div>
-            <h4>丝裂霉素：用了快60年的老药</h4>
-            <p>6月2日湖水发布专题文章，介绍丝裂霉素的来头、用法和未来。这是膀胱癌灌注治疗中历史最悠久的药物之一。</p>
-        </div>
-        <div class="k-card">
-            <div class="icon">🩺</div>
-            <h4>灌注后腹胀痛：分度自记表</h4>
-            <p>按「那天被耽误了多少事」来判断严重程度，不是按医学指标分级。表内有空位自行填写医生开具的用药，下次复查一目了然。</p>
-        </div>
-        <div class="k-card">
-            <div class="icon">🏥</div>
-            <h4>二次电切：为什么重要？</h4>
-            <p>永远的生机科普：指南对高级别尿路上皮癌要求二切（欧美国家共识）。二切验证首切是否切干净，约一半患者二切未发现癌细胞。如对病理报告有疑问，可借出病理载波片到大医院会诊。</p>
-        </div>
-        <div class="k-card">
-            <div class="icon">📚</div>
-            <h4>5群共创知识库上线</h4>
-            <p>湖水推广腾讯IMA知识库：看到公众号文章时点小熊猫头像即可存入库中，AI定期提炼知识点并更新总结文件。相当于群里的「大文件夹」。</p>
-        </div>
-    </div>
-</div>
+<!-- 主体 -->
+<div class="main">
 
-<!-- 板块三：ASCO 2026 最新进展 -->
-<div class="section">
-    <div class="section-title">ASCO 2026 速递<span>天道酬勤分享，群内热议</span></div>
-    
-    <div class="card">
-        <div class="card-tag">含ADC靶点</div>
-        <h3>维迪西妥单抗探索HER2过表达高危NMIBC保膀胱治疗新路径</h3>
-        <p>陈俊儒医师在ASCO 2026上报告：维迪西妥单抗（RC48）针对HER2过表达高危NMIBC的保膀胱治疗探索，为ADC药物在膀胱癌领域的应用提供新证据。</p>
-        <div class="source">来源：天道酬勤分享 · 2026-06-02</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-tag">NMIBC</div>
-        <h3>替雷利珠单抗联合放疗，丰富NMIBC治疗策略</h3>
-        <p>刘卓炜教授和李志勇教授报告：替雷利珠单抗联合放疗治疗BCG治疗失败高危NMIBC，2年膀胱保留率超90%。为BCG失败患者提供了新的保膀胱选择。</p>
-        <div class="source">来源：湖水分享 · 2026-06-02</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-tag">ADC新靶点</div>
-        <h3>尿路上皮癌：从EV到下一代ADC，NECTIN-4靶点新进展</h3>
-        <p>天道酬勤分享：ASCO 2026上NECTIN-4靶点的新进展报告。EV（维恩妥尤单抗）已成为MIBC新辅助治疗新标准，KEYNOTE-905 pCR率57%，KEYNOTE-B15 pCR率55.8% vs 32.5%（vs GC化疗）。</p>
-        <div class="source">来源：天道酬勤分享 · 2026-06-02</div>
-    </div>
-</div>
+    <!-- 群友热点 -->
+    <div class="section-title first">📣 群友热点 · 6 问</div>
 
-<!-- 板块四：群友经验 -->
-<div class="section" style="background:#fff;">
-    <div class="section-title" style="color:#b8443c;">群友经验<span>来自一线的真实记录</span></div>
-    
-    <div class="card">
-        <div class="card-tag">经验分享</div>
-        <h3>「我去年7月份体检B超一切正常，12月下旬尿血查出高级别上皮癌」</h3>
-        <p>无谓（无谓）分享：B超看医生水平，做的是憋尿B超但仍未查出，到12月尿血才确诊。提醒大家不要过度依赖体检B超，有症状要及时进一步检查。</p>
-        <div class="source">——群友 无谓（无谓）</div>
+    <div class="qa-card">
+        <div class="qa-q">▸ 新辅助治疗可以把肿瘤「打没」，还需要全切吗？</div>
+        <div class="qa-a">
+            <span class="speaker">上海潘</span>：新辅助的目的本来就是切，不是保膀胱化疗。EV+K药有人打完后肿瘤消失，但标准路径仍建议全切。<br>
+            <span class="speaker">风灵</span>：听说过有人新辅助后肿瘤打没了，不想切了——风险自担。<br>
+            <span class="speaker">吴*谦</span>：保命优先，想两全其美很难。如果保膀胱失败，还能否补救性全切，这个要问清楚。
+        </div>
     </div>
-    
-    <div class="card">
-        <div class="card-tag">经验分享</div>
-        <h3>「首切在县医院做的，二切在华南最牛的医院做的」</h3>
-        <p>刚子、勇均提到首切选择医院的重要性。刚子反思：县医院当时说得微创小手术没太当回事，如果当时知道严重的话直接去大医院，应该就不会有二切了。</p>
-        <div class="source">——群友 刚子、勇</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-tag">经验分享</div>
-        <h3>「药效起作用了，又给小腹上放了一个热水瓶，人一下舒服多了」</h3>
-        <p>盼盼分享卡介苗灌注后副作用应对经验：不要傻傻地硬抗，热敷+止痛药（泰诺）可以有效缓解灌注后的尿频尿急尿痛症状。</p>
-        <div class="source">——群友 盼盼</div>
-    </div>
-</div>
 
-<!-- CTA -->
-<div class="cta">
-    加入「5群共创知识库」，收藏每一篇有用的文章
-</div>
+    <div class="qa-card">
+        <div class="qa-q">▸ 什么情况可以直接全切，不用新辅助？</div>
+        <div class="qa-a">
+            <span class="speaker">上海潘</span>：浸润达到肌层以上、身体条件允许的患者，医生可能建议直接全切。但新辅助能降期、降低转移风险，<I>原则上能新辅助先新辅助</I>。<br>
+            <span class="speaker">阎先生</span>：要看体质和年龄。年轻、身体条件好的，保的概率更高。
+        </div>
+    </div>
 
-<!-- 底部 -->
+    <div class="qa-card">
+        <div class="qa-q">▸ PD-1/PD-L1 检测是做什么的？需要单独做吗？</div>
+        <div class="qa-a">
+            <span class="speaker">上海潘</span>：PD-L1 是免疫治疗的指标，阳性提示免疫治疗效果更好。免疫组化一般会包含，如果没有，可以找主治开证明去病理科补做，约 1200 元。<br>
+            <span class="speaker">Jinglll_</span>：我们是在二次电切后重新补做的，华西和四川省肿瘤医院都要求做。
+        </div>
+    </div>
+
+    <div class="qa-card">
+        <div class="qa-q">▸ 全切后住院多久？疼不疼？</div>
+        <div class="qa-a">
+            <span class="speaker">我想静静</span>：有麻药，术中不疼。造口版本约 10 天出院，原位新膀胱约 1 个月。<br>
+            <span class="speaker">永远的生机</span>：全切是大手术，建议找大医院有经验的医生。<br>
+            <span class="speaker">贵龙</span>：我全切手术四个半小时，术后醒过来，九天出院。术前灌肠有点痛苦，但为生存值得。
+        </div>
+    </div>
+
+    <div class="qa-card">
+        <div class="qa-q">▸ 膀胱全切，机器人手术能报销吗？</div>
+        <div class="qa-a">
+            <span class="speaker">上海潘</span>：前列腺癌机器人手术可以走医保，膀胱癌的机器人手术大概率要自费。各地政策不同，建议提前问清楚。<br>
+            <span class="speaker">风灵</span>：听说上海仁济医院机器人全切可以走医保，值得确认。
+        </div>
+    </div>
+
+    <div class="qa-card">
+        <div class="qa-q">▸ 病理切片有有效期吗？去大医院要不要重新做免疫组化？</div>
+        <div class="qa-a">
+            <span class="speaker">Jinglll_</span>：我们这边（四川）是用电切切片重新做免疫组化的。换了医院，一般会要求重新做。<br>
+            <span class="speaker">cargle</span>：病理切片蜡块可以保存很久，但免疫组化各医院认可度不同，带原切片去大医院，让他们判断要不要重做。
+        </div>
+    </div>
+
+    <div class="doubt-section">
+        <div class="doubt-title">💬 群友疑问 · 保留争议</div>
+        <div class="doubt-item">
+            <span class="doubt-q">向日葵🌻Lily</span>：这个分类是看哪个报告看出来的？
+            <span style="color:#b8443c;">→ 上海潘回复：这个信息有误吧（未指明具体哪条）</span>
+        </div>
+        <div class="doubt-item">
+            <span class="doubt-q">dudu</span>：浸润肌层为什么不直接做新辅助化疗，要先全切？
+            <span style="color:#b8443c;">→ 群友讨论中，尚无定论，欢迎有经验者补充</span>
+        </div>
+        <div class="doubt-item">
+            <span class="doubt-q">静待花开</span>：新辅助后二次电切病理无癌细胞，还得全切吗？
+            <span style="color:#b8443c;">→ 群内暂无一致结论，医生方案差异较大</span>
+        </div>
+        <div class="doubt-item">
+            <span class="doubt-q">dudu</span>：基因检测需要做吗？费用大概多少？哪里做得好？
+            <span style="color:#b8443c;">→ 上海潘认为膀胱癌基因检测意义不大，做 PD-L1 即可</span>
+        </div>
+        <div class="doubt-item">
+            <span class="doubt-q">军工品质</span>：为什么不考虑试试 ADC 保膀胱？
+            <span style="color:#b8443c;">→ 开放式问题，欢迎有 ADC 保膀胱经验者分享</span>
+        </div>
+        <div class="doubt-item" style="font-size:11.5px; color:#6b5c4a; font-style:italic;">
+            ⚠ 本版块仅记录群友当日提出的疑问和争议，不代表任何医学结论。如有错漏，欢迎指正。
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 知识卡片 -->
+    <div class="section-title">📚 知识卡片 · 今日回顾</div>
+    <div class="kb-grid">
+        <div class="kb-card">
+            <div class="kb-title">🔖 新辅助化疗</div>
+            在手术前做化疗/免疫治疗，目的：① 降期（肿瘤缩小）② 清除微转移灶 ③ 评估药物敏感度。EV+替雷利珠 4 疗程后二次电切，无癌细胞即降期成功。
+        </div>
+        <div class="kb-card">
+            <div class="kb-title">🔖 PD-L1 表达</div>
+            免疫治疗的生物标志物。CPS≥10 或 PD-L1高表达，提示免疫治疗效果更好。替雷利珠不论 PD-L1 表达均可使用；特瑞普利新增 mUC 一线适应症。
+        </div>
+        <div class="kb-card">
+            <div class="kb-title">🔖 保膀胱三要素</div>
+            ① 肿瘤范围局限（无憩室/多发）② 未浸润子宫/阴道/前列腺 ③ 患者意愿强烈 + 能配合严格随访。不满足者，全切仍是最稳妥选择。
+        </div>
+        <div class="kb-card">
+            <div class="kb-title">🔖 灌注副作用应对</div>
+            吡柔比星/丝裂霉素灌注后尿痛：① 灌注前 3 天吃三金片 ② 灌完后大量喝水 ③ 必要时口服阿莫西林（需医生开）。约 2-3 天缓解。
+        </div>
+        <div class="kb-card">
+            <div class="kb-title">🔖 EV 联合方案</div>
+            EV（维迪西妥单抗）+ 免疫治疗（替雷利珠/特瑞普利）是 2026 年最热组合。ASCO 最新数据：联合放疗 1 年 DFS 率达 95%。
+        </div>
+        <div class="kb-card">
+            <div class="kb-title">🔖 全切手术选择</div>
+            ① <b>回肠膀胱（造口）</b>：手术相对简单，终身挂袋。② <b>原位新膀胱</b>：保留尿道排尿，但手术难度大，对医生技术要求高。选医生比选术式更重要。
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 医生推荐 -->
+    <div class="section-title">🏥 群友推荐医生 · 仅供参考</div>
+    <div class="doctor-card">
+        <span class="doc-name">曹明</span>（上海仁济医院）：群友 <span class="speaker">上海潘</span> 推荐，据说三代行医，有医德，愿意保膀胱。机器人手术可能走医保。<span style="color:#b8443c;">⚠ 需自行核实</span>
+    </div>
+    <div class="doctor-card">
+        <span class="doc-name">席志军</span>（北大第一医院）：群友 <span class="speaker">永远的生机</span> 提醒：若考虑原位新膀胱，席医生可能不是最优选择（据称原位新膀胱技术非其强项）。<span style="color:#b8443c;">⚠ 需自行核实</span>
+    </div>
+    <div class="doctor-card">
+        <span class="doc-name">吕强</span>（江苏省人民医院）：<span class="speaker">静待花开</span> 正在其处治疗，新辅助治疗中。据群友反馈「手艺还行」，但倾向全切。
+    </div>
+    <div class="doctor-card">
+        <span class="doc-name">鲍一歌</span>（华西医院）：<span class="speaker">Jinglll_</span> 面诊体验：讲得很详细，EV+特瑞普利方案。张朋教授切膀胱厉害。
+    </div>
+    <div class="doctor-card">
+        <span class="doc-name">张金明</span>（群友本人）：T2N0M0，江苏省人民医院治疗，EV+替雷利珠 4 疗程后二次电切无癌细胞，现每三周替雷利珠维持，恢复良好。👍 <I>个体结果，仅供参考</I>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 群友一线经验 -->
+    <div class="section-title">💬 群友一线 · 真实记录</div>
+
+    <div class="quote-block q-black">
+        「我 T2N0M0，去年 6 月电切，EV+替雷利珠 4 疗程后 10 月二次电切和核磁显示无癌细胞。后面每三周一次替雷利珠维持，3 月底复查膀胱镜恢复良好，尿液细胞脱落检查阴性。医生当时也叫我切膀胱，我想再赌一次。」
+        <div style="text-align:right;font-size:11px;opacity:0.6;margin-top:4px;">—— 张*明 · 2026-06-03</div>
+    </div>
+
+    <div class="quote-block q-red">
+        「我爸 52 岁，T2N0M0，医生全都让切。今天我们选了 EV+特瑞普利，也不知道效果怎么样。能保住 EV 就行，慢慢调剂量。不想既要又要。」<div style="text-align:right;font-size:11px;opacity:0.7;margin-top:4px;">—— Jinglll_ · 2026-06-03</div>
+    </div>
+
+    <div class="quote-block q-cream">
+        「我家那位才 43 岁，T2G3，现在在新辅助治疗中，三次后二次电切再看病理。省人医吕强做的，也想过去仁济曹明看看。保还是切，每天都在纠结。」<div style="text-align:right;font-size:11px;opacity:0.5;margin-top:4px;">—— 静待花开 · 2026-06-03</div>
+    </div>
+
+    <div class="quote-block q-cream">
+        「我全切手术四个半小时，术后醒过来，九天出院。术前灌肠有点痛苦，但为生存坚持就是胜利。切记康复期佩带腹带，不做剧烈活动，防造口旁疝。」<div style="text-align:right;font-size:11px;opacity:0.5;margin-top:4px;">—— 贵龙 · 2026-06-03</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 今日头条 -->
+    <div class="section-title">📄 今日头条</div>
+
+    <div class="article">
+        <div class="article-head">❶ 向日葵🌻初诊：58 岁母亲，肿瘤已侵及肌层</div>
+        <div class="article-body">
+            群里新群友 <span class="hl">向日葵🌻Lily</span> 加入，母亲 58 岁，上周发现血尿，县医院检查「情况不好」，转至市医院已基本确诊。病理提示肿瘤侵及肌层、位置不佳，增强 CT 结果待出。<br><br>
+            群友讨论焦点：① 无疼痛、无家族史、不吸烟，为何突然确诊晚期？—— 膀胱癌早期常无症状。② 治疗方案：医生倾向于先化疗 3 次（约 2 个月），再全切。<span class="hl">上海潘</span> 提醒：新辅助化疗的目的仍是切，不是保；但有人通过 EV+K 药把肿瘤「打没」，不想切了——这是 2026 年最前沿的争议话题。
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-head">❷ dudu 的抉择：复发后浸润肌层，切还是先新辅助？</div>
+        <div class="article-body">
+            <span class="hl">dudu</span> 2023 年 8 月电切 + 卡介苗灌注，2026 年 5 月复查复发，刚做了二次电切，医生判断「太深了切不干净」，建议直接全切。dudu 纠结：<I>为什么不先做新辅助治疗降期，再评估能否保？</I><br><br>
+            群友 <span class="hl">阎先生</span> 分享：自己 41 岁发病、42 岁复发，选择保膀胱治疗，目前 5 年多未复发。但他强调：<I>「保命比保膀胱重要，67 岁这个岁数，还是建议全切。」</I><br><br>
+            最新进展：医生计划先做 PET-CT，有周围淋巴结转移就先做新辅助，无转移就直接切后再做后续治疗。群友提醒：<I>新辅助和手术的医生最好同一个团队，衔接更顺畅</I>。
+        </div>
+    </div>
+
+    <div class="article">
+        <div class="article-head">❸ 灌注经验：吡柔比星第 8 次，如何应对尿痛？</div>
+        <div class="article-body">
+            <span class="hl">无谓</span>（熊云川）分享：今天去灌注，遇到一个病友 6 年没复发，今年 3 月复发了，灌注方案是吡柔比星——周灌 8 次 + 半月 1 次 8 次 + 1 个月 1 次 8 次。<I>「第一次听说这种灌法！」</I><br><br>
+            应对灌注后尿痛，<span class="hl">无谓</span> 的经验：① 灌注前 3 天吃三金片 ② 灌完后大量喝水 ③ 晚上用吲哚美辛栓（肛门栓）④ 必要时口服阿莫西林（需医生开）。约 2-3 天缓解。<br><br>
+            <span class="hl">风灵</span> 提醒：膀胱镜复查前最好不要灌注，炎症会影响观察。
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ASCO 速递 -->
+    <div class="section-title">📰 ASCO 2026 速递 · 群友关注</div>
+    <div class="ascc-row">
+        <div class="ascc-item">
+            <div class="ascc-tag">ADC</div>
+            <b>维迪西妥 + 放疗</b><br>
+            1年DFS率<span style="color:#b8443c;font-weight:900;">95%</span>，中国UTUC创新辅助方案。
+        </div>
+        <div class="ascc-item">
+            <div class="ascc-tag">IO</div>
+            <b>替雷利珠 + 放疗</b><br>
+            局部晚期尿路上皮癌新方案，群友张*明即受益者。
+        </div>
+        <div class="ascc-item">
+            <div class="ascc-tag">靶向</div>
+            <b>Nectin-4 ADC</b><br>
+            新一代靶点，维迪西妥同靶点升级药物，临床试验中。
+        </div>
+    </div>
+
+    <div class="deco-line">❖ ❖ ❖</div>
+
+    <!-- 提醒 -->
+    <div class="quote-block q-cream" style="font-size:12px;">
+        ⚠️ <b>免责声明</b>：本日报内容来自群友分享，仅供交流参考，不构成医疗建议。具体治疗方案请务必咨询主管医生。群友推荐医生信息来自个人体验， Please verify by yourself.
+    </div>
+
+</div><!-- end .main -->
+
+<!-- 底栏 -->
 <div class="footer">
-    <div class="brand">湖水和朋友们 · 群日报</div>
-    由 AI 从群聊天记录中提炼生成<br>
-    仅供参考，不构成医疗建议<br>
-    每家医院方案不同，请遵医嘱
+    <div>湖水和朋友们 · 泌尿健康5群</div>
+    <div>2026-06-03 · 周三</div>
+    <div>阅读原文 →<br><a href="https://zhao2jun.github.io/">zhao2jun.github.io</a></div>
 </div>
 
 </body>
