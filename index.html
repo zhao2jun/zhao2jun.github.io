@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=750, initial-scale=1.0">
+    <title>湖水和朋友们·群日报 2026-06-03</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 750px;
+            margin: 0 auto;
+            background: #ede5d0;
+            font-family: "Songti SC", "SimSun", "STSong", serif;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+        /* 头部 */
+        .header {
+            background: #b8443c;
+            color: #fff;
+            padding: 40px 50px 30px;
+            border-bottom: 6px solid #1a1a1a;
+        }
+        .header .date {
+            font-size: 14px;
+            letter-spacing: 3px;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+        .header h1 {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            line-height: 1.3;
+        }
+        .header .subtitle {
+            font-size: 15px;
+            margin-top: 10px;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+        /* 导语 */
+        .hero {
+            background: #fff;
+            margin: 0;
+            padding: 40px 50px;
+            border-bottom: 3px solid #1a1a1a;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #b8443c;
+        }
+        .hero p {
+            font-size: 17px;
+            line-height: 2;
+            color: #2a2a2a;
+            padding-left: 20px;
+        }
+        .hero .highlight {
+            color: #b8443c;
+            font-weight: 700;
+        }
+        /* 统计条 */
+        .stats {
+            display: flex;
+            background: #1a1a1a;
+            color: #fff;
+            border-bottom: 3px solid #b8443c;
+        }
+        .stat-item {
+            flex: 1;
+            text-align: center;
+            padding: 20px 10px;
+            border-right: 1px solid #333;
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-num {
+            font-size: 32px;
+            font-weight: 900;
+            color: #e8c87a;
+        }
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+        /* 板块 */
+        .section {
+            background: #ede5d0;
+            padding: 35px 50px;
+            border-bottom: 3px solid #1a1a1a;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: #b8443c;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            padding-left: 16px;
+            border-left: 5px solid #b8443c;
+        }
+        .section-title span {
+            font-size: 13px;
+            color: #888;
+            margin-left: 10px;
+            letter-spacing: 1px;
+        }
+        /* 卡片 */
+        .card {
+            background: #fff;
+            border: 2px solid #1a1a1a;
+            padding: 22px 26px;
+            margin-bottom: 18px;
+            position: relative;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 28px;
+            height: 28px;
+            border-top: 3px solid #b8443c;
+            border-left: 3px solid #b8443c;
+        }
+        .card-tag {
+            display: inline-block;
+            background: #b8443c;
+            color: #fff;
+            font-size: 11px;
+            padding: 2px 10px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .card p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.9;
+        }
+        .card .source {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+            text-align: right;
+        }
+        /* 话题列表 */
+        .topic-list {
+            background: #fff;
+            border: 2px solid #1a1a1a;
+            padding: 5px 0;
+        }
+        .topic-item {
+            padding: 16px 26px;
+            border-bottom: 1px dashed #ccc;
+            display: flex;
+            align-items: flex-start;
+        }
+        .topic-item:last-child { border-bottom: none; }
+        .topic-num {
+            background: #b8443c;
+            color: #fff;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 900;
+            margin-right: 14px;
+            margin-top: 1px;
+        }
+        .topic-content {
+            flex: 1;
+        }
+        .topic-content .q {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .topic-content .a {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+            line-height: 1.7;
+        }
+        .topic-content .speaker {
+            font-size: 12px;
+            color: #b8443c;
+            margin-top: 4px;
+        }
+        /* 知识卡片网格 */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .k-card {
+            background: #fff;
+            border: 2px solid #1a1a1a;
+            padding: 16px 18px;
+            position: relative;
+        }
+        .k-card .icon {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+        .k-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #b8443c;
+            margin-bottom: 6px;
+        }
+        .k-card p {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.7;
+        }
+        /* 底部 */
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 28px 50px;
+            font-size: 12px;
+            line-height: 2;
+            letter-spacing: 1px;
+        }
+        .footer .brand {
+            color: #e8c87a;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        /* CTA */
+        .cta {
+            background: #b8443c;
+            color: #fff;
+            text-align: center;
+            padding: 22px 50px;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        .cta a {
+            color: #e8c87a;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 头部 -->
+<div class="header">
+    <div class="date">贰零贰陆年 · 陆月叁日</div>
+    <h1>湖水和朋友们<br>·群日报·</h1>
+    <div class="subtitle">泌尿健康5群 · 两日精选</div>
+</div>
+
+<!-- 导语 -->
+<div class="hero">
+    <p>
+        过去两天，5群围绕<span class="highlight">灌注副作用管理</span>、<span class="highlight">二次电切的意义</span>、<span class="highlight">ASCO 2026最新进展</span>展开热烈讨论。群友用亲身经历回答彼此的疑问——「卡介苗灌注第15次出血正常吗？」「二次电切后灌注次数要重新算吗？」「B超查膀胱癌到底靠不靠谱？」——这些问题的答案，散落在446条6月1日的消息和152条6月2日的消息里，我们用这份日报帮你收拢。
+    </p>
+</div>
+
+<!-- 统计 -->
+<div class="stats">
+    <div class="stat-item">
+        <div class="stat-num">598</div>
+        <div class="stat-label">两日消息总量</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">活跃发言群友</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">知识卡片发布</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">新群友加入</div>
+    </div>
+</div>
+
+<!-- 板块一：群友热点讨论 -->
+<div class="section">
+    <div class="section-title">群友关切<span>过去48小时，大家在问什么</span></div>
+    
+    <div class="topic-list">
+        <div class="topic-item">
+            <div class="topic-num">1</div>
+            <div class="topic-content">
+                <div class="q">卡介苗灌注后尿频、尿急、尿痛，正常吗？第15次灌注后轻微出血呢？</div>
+                <div class="a">盼盼分享：今天做了一次卡介苗灌注，从第一次解手到四个小时内上了20次厕所，吃了一片泰诺（加拿大止痛药）并放热水瓶后缓解。群友回音、阎先生、永远的生机均表示轻微出血正常，建议下次灌注前验尿常规。</div>
+                <div class="speaker">▸ 提问：盼盼、回家真好　▸ 回答：回音、阎先生🍎、永远的生机</div>
+            </div>
+        </div>
+        <div class="topic-item">
+            <div class="topic-num">2</div>
+            <div class="topic-content">
+                <div class="q">膀胱复发，自己会有什么感觉？</div>
+                <div class="a">天道酬勤答：没有太大感觉，非要说上感觉，那就是肉眼可能会看到再次血尿——当出现血尿时已经基本复发完成了。灯妈补充：膀胱癌最初基本上毫无征兆，强调定期复查的重要性。</div>
+                <div class="speaker">▸ 提问：无谓（无谓）　▸ 回答：天道酬勤、灯妈</div>
+            </div>
+        </div>
+        <div class="topic-item">
+            <div class="topic-num">3</div>
+            <div class="topic-content">
+                <div class="q">B超查膀胱癌准确吗？复查该做CT还是B超？</div>
+                <div class="a">止园：B超3-5毫米且水平好的医生才能发现，一般医生可能要接近1厘米才能发现。上海潘补充：非肌层浸润型一年做一次CTU，普通体检B超不憋尿查不出。吴*谦据指南：低危一年一次影像，高危每6-12个月一次。</div>
+                <div class="speaker">▸ 讨论：止园、上海潘、吴*谦、天道酬勤</div>
+            </div>
+        </div>
+        <div class="topic-item">
+            <div class="topic-num">4</div>
+            <div class="topic-content">
+                <div class="q">二次电切后，灌注次数需要重新计算吗？</div>
+                <div class="a">刚子反映多个医生说法不一。上海潘（23年手术T1G3未复发）认为诱导灌注8次后进入月灌，二切后不用重新算；龙人一切后灌卡介苗四次、二切后继续，询问后续次数。勇分享自己灌了二次吡柔比星、三次卡介苗后再二次电切。</div>
+                <div class="speaker">▸ 讨论：刚子、上海潘、龙人、勇</div>
+            </div>
+        </div>
+        <div class="topic-item">
+            <div class="topic-num">5</div>
+            <div class="topic-content">
+                <div class="q">丝裂霉素、表柔比星、卡介苗，灌注药有什么区别？</div>
+                <div class="a">刚子询问丝裂霉素与表柔比星的区别。湖水回复：目的一样，都有的，来来回回就这几种药能用。棉花糖糖认为这几个效果应该差不多，除了卡介苗。</div>
+                <div class="speaker">▸ 讨论：刚子、湖水、棉花糖糖</div>
+            </div>
+        </div>
+        <div class="topic-item">
+            <div class="topic-num">6</div>
+            <div class="topic-content">
+                <div class="q">维迪西妥单抗、特瑞普利单抗治疗，需要自己去外面买药吗？医保能报销吗？</div>
+                <div class="a">止园分享自己去医院外面买维迪西妥，医院没有，网上说利于运输储存。小李飞刀答：一般市里都有定点药店，让医生开外购药去那边打；这个药不报销。Tyche询问门特门慢未审批下来能否报销，止园确认门特批了也不能报。</div>
+                <div class="speaker">▸ 讨论：Tyche、止园、小李飞刀</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 板块二：知识卡片回顾 -->
+<div class="section" style="background:#fff;">
+    <div class="section-title" style="color:#b8443c;">知识卡片·两日回顾<span>湖水分享，AI提炼</span></div>
+    
+    <div class="knowledge-grid">
+        <div class="k-card">
+            <div class="icon">📌</div>
+            <h4>膀胱癌分类速记</h4>
+            <p>NMIBC：Ta（乳头状）、T1（侵固有层）、CIS（原位癌，54%进展为MIBC）<br>MIBC：T2（侵肌层）、T3-T4（侵膀胱外）<br>⚠️ CIS虽属NMIBC，但按超高危对待</p>
+        </div>
+        <div class="k-card">
+            <div class="icon">🔬</div>
+            <h4>膀胱原位癌（CIS）深度科普</h4>
+            <p>隐匿性强，白光膀胱镜检出率仅50%<br>54%进展为MIBC<br>BCG无应答者肌层进展率高达66%<br>破局：荧光膀胱镜+多点随机活检</p>
+        </div>
+        <div class="k-card">
+            <div class="icon">💊</div>
+            <h4>丝裂霉素：用了快60年的老药</h4>
+            <p>6月2日湖水发布专题文章，介绍丝裂霉素的来头、用法和未来。这是膀胱癌灌注治疗中历史最悠久的药物之一。</p>
+        </div>
+        <div class="k-card">
+            <div class="icon">🩺</div>
+            <h4>灌注后腹胀痛：分度自记表</h4>
+            <p>按「那天被耽误了多少事」来判断严重程度，不是按医学指标分级。表内有空位自行填写医生开具的用药，下次复查一目了然。</p>
+        </div>
+        <div class="k-card">
+            <div class="icon">🏥</div>
+            <h4>二次电切：为什么重要？</h4>
+            <p>永远的生机科普：指南对高级别尿路上皮癌要求二切（欧美国家共识）。二切验证首切是否切干净，约一半患者二切未发现癌细胞。如对病理报告有疑问，可借出病理载波片到大医院会诊。</p>
+        </div>
+        <div class="k-card">
+            <div class="icon">📚</div>
+            <h4>5群共创知识库上线</h4>
+            <p>湖水推广腾讯IMA知识库：看到公众号文章时点小熊猫头像即可存入库中，AI定期提炼知识点并更新总结文件。相当于群里的「大文件夹」。</p>
+        </div>
+    </div>
+</div>
+
+<!-- 板块三：ASCO 2026 最新进展 -->
+<div class="section">
+    <div class="section-title">ASCO 2026 速递<span>天道酬勤分享，群内热议</span></div>
+    
+    <div class="card">
+        <div class="card-tag">含ADC靶点</div>
+        <h3>维迪西妥单抗探索HER2过表达高危NMIBC保膀胱治疗新路径</h3>
+        <p>陈俊儒医师在ASCO 2026上报告：维迪西妥单抗（RC48）针对HER2过表达高危NMIBC的保膀胱治疗探索，为ADC药物在膀胱癌领域的应用提供新证据。</p>
+        <div class="source">来源：天道酬勤分享 · 2026-06-02</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-tag">NMIBC</div>
+        <h3>替雷利珠单抗联合放疗，丰富NMIBC治疗策略</h3>
+        <p>刘卓炜教授和李志勇教授报告：替雷利珠单抗联合放疗治疗BCG治疗失败高危NMIBC，2年膀胱保留率超90%。为BCG失败患者提供了新的保膀胱选择。</p>
+        <div class="source">来源：湖水分享 · 2026-06-02</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-tag">ADC新靶点</div>
+        <h3>尿路上皮癌：从EV到下一代ADC，NECTIN-4靶点新进展</h3>
+        <p>天道酬勤分享：ASCO 2026上NECTIN-4靶点的新进展报告。EV（维恩妥尤单抗）已成为MIBC新辅助治疗新标准，KEYNOTE-905 pCR率57%，KEYNOTE-B15 pCR率55.8% vs 32.5%（vs GC化疗）。</p>
+        <div class="source">来源：天道酬勤分享 · 2026-06-02</div>
+    </div>
+</div>
+
+<!-- 板块四：群友经验 -->
+<div class="section" style="background:#fff;">
+    <div class="section-title" style="color:#b8443c;">群友经验<span>来自一线的真实记录</span></div>
+    
+    <div class="card">
+        <div class="card-tag">经验分享</div>
+        <h3>「我去年7月份体检B超一切正常，12月下旬尿血查出高级别上皮癌」</h3>
+        <p>无谓（无谓）分享：B超看医生水平，做的是憋尿B超但仍未查出，到12月尿血才确诊。提醒大家不要过度依赖体检B超，有症状要及时进一步检查。</p>
+        <div class="source">——群友 无谓（无谓）</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-tag">经验分享</div>
+        <h3>「首切在县医院做的，二切在华南最牛的医院做的」</h3>
+        <p>刚子、勇均提到首切选择医院的重要性。刚子反思：县医院当时说得微创小手术没太当回事，如果当时知道严重的话直接去大医院，应该就不会有二切了。</p>
+        <div class="source">——群友 刚子、勇</div>
+    </div>
+    
+    <div class="card">
+        <div class="card-tag">经验分享</div>
+        <h3>「药效起作用了，又给小腹上放了一个热水瓶，人一下舒服多了」</h3>
+        <p>盼盼分享卡介苗灌注后副作用应对经验：不要傻傻地硬抗，热敷+止痛药（泰诺）可以有效缓解灌注后的尿频尿急尿痛症状。</p>
+        <div class="source">——群友 盼盼</div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+    加入「5群共创知识库」，收藏每一篇有用的文章
+</div>
+
+<!-- 底部 -->
+<div class="footer">
+    <div class="brand">湖水和朋友们 · 群日报</div>
+    由 AI 从群聊天记录中提炼生成<br>
+    仅供参考，不构成医疗建议<br>
+    每家医院方案不同，请遵医嘱
+</div>
+
+</body>
+</html>
