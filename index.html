@@ -2,346 +2,423 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=750, user-scalable=no">
-    <title>湖水和朋友们·群日报 2026-06-03</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>湖水和朋友们·群日报 2026-06-17</title>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d064d74bbfcec365f5921fe28a0188f8";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background: #ede5d0;
-            font-family: "Songti SC", "SimSun", "STSong", serif;
             color: #1a1815;
-            width: 750px;
+            font-family: "Songti SC", "SimSun", "STSong", serif;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 18px 20px 24px;
-            line-height: 1.7;
-            font-size: 13.5px;
+            padding: 0;
         }
         /* 报头 */
         .header {
-            border: 3px solid #1a1815;
-            padding: 14px 16px 12px;
-            margin-bottom: 14px;
             background: #1a1815;
             color: #ede5d0;
+            padding: 18px 14px 12px;
+            border-bottom: 4px solid #b8443c;
         }
         .header-top {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: flex-start;
             margin-bottom: 6px;
         }
-        .header-title {
-            font-size: 22px;
+        .brand {
+            font-size: 26px;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
+            line-height: 1.1;
         }
-        .header-title span { color: #b8443c; }
-        .header-date {
-            font-size: 12px;
-            opacity: 0.7;
+        .brand span { color: #b8443c; }
+        .header-meta {
+            text-align: right;
+            font-size: 11px;
+            color: #c9b99a;
+            line-height: 1.6;
         }
-        .header-sub {
+        .tagline {
             font-size: 11.5px;
-            opacity: 0.55;
-            letter-spacing: 1px;
+            color: #c9b99a;
+            letter-spacing: 3px;
+            border-top: 1px solid #444;
+            padding-top: 6px;
+            margin-top: 6px;
         }
-        /* 导语条 */
+        /* 导语红条 */
         .lead-bar {
             background: #b8443c;
             color: #ede5d0;
-            padding: 7px 12px;
-            font-size: 12px;
-            letter-spacing: 1px;
-            margin-bottom: 14px;
-            border: 2px solid #1a1815;
+            padding: 8px 14px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            border-bottom: 2px solid #1a1815;
         }
-        /* 分隔线 */
-        .divider {
-            border-top: 2px solid #1a1815;
-            margin: 14px 0;
-        }
-        /* 板块标题 */
+        /* 章节标题 */
         .section-title {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            border-left: 4px solid #b8443c;
-            padding-left: 8px;
-            margin: 14px 0 8px;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            border-top: 3px solid #1a1815;
+            border-bottom: 1px solid #c9b99a;
+            padding: 5px 10px;
+            background: #e4d8c0;
+            margin: 10px 0 0;
         }
-        /* 群友问答 */
+        /* 通用内容块 */
+        .content-block {
+            padding: 10px 14px;
+            border-bottom: 1px solid #c9b99a;
+        }
+        /* 分割线 */
+        .divider {
+            border: none;
+            border-top: 2px solid #1a1815;
+            margin: 10px 0 0;
+        }
+        /* 问答 */
         .qa-item {
-            border: 1.5px solid #1a1815;
-            padding: 7px 10px;
-            margin-bottom: 6px;
-            background: #f9f2e0;
+            padding: 9px 10px;
+            border-bottom: 1px solid #e0d4b8;
+            font-size: 13px;
+        }
+        .qa-item:last-child { border-bottom: none; }
+        .qa-q {
+            font-weight: 900;
+            color: #1a1815;
+            margin-bottom: 3px;
+        }
+        .qa-q::before { content: "❓ "; }
+        .qa-a {
+            color: #3a2e22;
+            padding-left: 14px;
+            border-left: 3px solid #b8443c;
+            margin-top: 4px;
             font-size: 12.5px;
         }
-        .qa-q { font-weight: 700; color: #1a1815; }
-        .qa-a { padding-left: 12px; }
-        .qa-a .speaker { color: #b8443c; font-weight: 700; }
+        .qa-a .speaker {
+            color: #b8443c;
+            font-weight: 700;
+        }
         /* 群友疑问 */
         .doubt-section {
             border: 2px dashed #b8443c;
-            margin: 14px 0;
+            margin: 10px 0 0;
             background: #fefcf5;
         }
         .doubt-title {
             background: #b8443c;
             color: #ede5d0;
             padding: 6px 10px;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
             letter-spacing: 2px;
         }
         .doubt-item {
-            padding: 8px 10px;
+            padding: 7px 10px;
             border-bottom: 1px dotted #c9b99a;
             font-size: 12.5px;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         .doubt-item:last-child { border-bottom: none; }
         .doubt-q { color: #1a1815; font-weight: 700; }
-        .doubt-speaker { color: #b8443c; font-weight: 700; }
+        .doubt-note { color: #b8443c; font-size: 11.5px; display: block; margin-top: 2px; }
+        .doubt-footer {
+            padding: 5px 10px;
+            font-size: 11px;
+            color: #6b5c4a;
+            font-style: italic;
+            border-top: 1px dotted #c9b99a;
+        }
         /* 知识卡片 */
-        .card-grid {
+        .cards-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0;
-            border: 1.5px solid #1a1815;
-            margin-bottom: 14px;
+            gap: 8px;
+            padding: 10px;
         }
         .card {
-            border-right: 1.5px solid #1a1815;
-            border-bottom: 1.5px solid #1a1815;
-            padding: 8px 9px;
-            font-size: 11.5px;
+            background: #1a1815;
+            color: #ede5d0;
+            padding: 10px 9px;
+            border: 1px solid #3a2e22;
+            font-size: 12px;
             line-height: 1.7;
         }
-        .card:nth-child(2n) { border-right: none; }
-        .card:nth-last-child(-n+2) { border-bottom: none; }
         .card-title {
-            font-weight: 700;
-            font-size: 12px;
             color: #b8443c;
-            margin-bottom: 3px;
+            font-weight: 900;
+            font-size: 12px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
-        /* 引言 */
-        .quote-block {
-            border-left: 3px solid #b8443c;
-            padding: 7px 10px;
-            margin: 8px 0;
+        .card-body { font-size: 11.5px; }
+        /* 群内动态 */
+        .news-item {
+            padding: 8px 10px;
+            border-bottom: 1px solid #e0d4b8;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-tag {
+            display: inline-block;
+            background: #b8443c;
+            color: #ede5d0;
+            font-size: 10px;
+            padding: 1px 5px;
+            margin-right: 4px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        /* 群友故事 */
+        .story-item {
+            padding: 9px 12px;
+            background: #f5edd8;
+            margin: 8px 10px;
+            border-left: 4px solid #b8443c;
             font-size: 12.5px;
-            background: #f9f2e0;
+            line-height: 1.8;
+        }
+        .story-speaker {
+            font-weight: 900;
+            color: #b8443c;
+            font-size: 12px;
         }
         /* 底栏 */
         .footer {
-            border: 2px solid #1a1815;
-            margin-top: 14px;
-            padding: 10px 12px;
-            font-size: 11px;
             background: #1a1815;
             color: #c9b99a;
-            line-height: 1.6;
+            padding: 12px 14px;
+            text-align: center;
+            font-size: 11px;
+            line-height: 1.8;
+            border-top: 3px solid #b8443c;
         }
-        .footer-brand {
+        .footer-logo {
+            font-size: 16px;
             color: #ede5d0;
-            font-weight: 700;
-            font-size: 12px;
-            margin-bottom: 3px;
+            font-weight: 900;
+            margin-bottom: 4px;
         }
-        /* 三级标题 */
-        .sub-title {
-            font-size: 12.5px;
-            font-weight: 700;
-            color: #b8443c;
-            margin: 8px 0 4px;
+        .footer-logo span { color: #b8443c; }
+        /* 新成员 */
+        .newmember {
+            font-size: 12px;
+            padding: 5px 10px;
+            color: #6b5c4a;
+            font-style: italic;
+            border-bottom: 1px dotted #c9b99a;
         }
     </style>
 </head>
 <body>
 
-    <!-- 报头 -->
-    <div class="header">
-        <div class="header-top">
-            <div class="header-title">湖水 和 <span>朋友们</span></div>
-            <div class="header-date">2026-06-03 · 第 3 期</div>
-        </div>
-        <div class="header-sub">泌尿健康5群 · 单日精选报</div>
-    </div>
-
-    <!-- 导语 -->
-    <div class="lead-bar">
-      📊 今日群内 301 条消息 · 聚焦：新辅助 vs 直接全切的抉择
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 群友问答 -->
-    <div class="section-title">💬 群友问答 · 今日热议</div>
-
-    <div class="qa-item">
-        <div class="qa-q">▸ 向日葵🌻Lily：膀胱癌分类是看哪个报告看出来的？</div>
-        <div class="qa-a"><span class="speaker">上海潘</span>：这个信息有误吧（未指明具体条目）</div>
-        <div class="qa-a"><span class="speaker">风灵</span>：看病理报告</div>
-    </div>
-
-    <div class="qa-item">
-        <div class="qa-q">▸ dudu：t3期膀胱癌，可以直接先全切后再做后续治疗吗？</div>
-        <div class="qa-a"><span class="speaker">上海潘</span>：最好先化疗，新辅助化疗可以看到对药物的效果</div>
-        <div class="qa-a"><span class="speaker">吴*谦</span>：术前体力好能耐受，可以降期，降低转移</div>
-    </div>
-
-    <div class="qa-item">
-        <div class="qa-q">▸ dudu：浸润肌层为什么建议直接切，而不是先做新辅助治疗？</div>
-        <div class="qa-a"><span class="speaker">上海潘</span>：浸润达到肌层以上的适合直接切；当然也有保的，群里有一个就是保成功的</div>
-        <div class="qa-a"><span class="speaker">吴*谦</span>：是不是有其他因素导致大夫觉得不适合做新辅助了？有问过么</div>
-    </div>
-
-    <div class="qa-item">
-        <div class="qa-q">▸ 静待花开：新辅助后二次电切病理无癌细胞，还得全切吗？</div>
-        <div class="qa-a"><span class="speaker">上海潘</span>：新辅助的目的还是切，不是保膀胱化疗</div>
-        <div class="qa-a"><span class="speaker">风灵</span>：现在都建议新辅助后全切，会降期肿瘤，也会降低转移可能</div>
-    </div>
-
-    <div class="qa-item">
-        <div class="qa-q">▸ dudu：基因检测需要做吗？费用大概多少？哪里做得好？</div>
-        <div class="qa-a"><span class="speaker">上海潘</span>：膀胱癌的药就那几种，只要查个 Her2 和 PD-1 就行；膀胱癌基因检测意义不大，做 PD-L1 即可</div>
-        <div class="qa-a"><span class="speaker">Jinglll_</span>：我们这儿才做了，主治医生开了一个证明拿到病理科补做，1200 元加做 PD-L1</div>
-    </div>
-
-    <div class="qa-item">
-        <div class="qa-q">▸ 军工品质：为什么不考虑试试 ADC 保膀胱？</div>
-        <div class="qa-a"><span class="speaker">上海潘</span>：Her2 阳性可以用 ADC 药（维迪西妥单抗）</div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- 群友疑问 -->
-    <div class="doubt-section">
-        <div class="doubt-title">💬 群友疑问 · 保留争议</div>
-        <div class="doubt-item">
-            <span class="doubt-q">向日葵🌻Lily</span>：这个分类是看哪个报告看出来的？
-            <span style="color:#b8443c;">→ 上海潘回复：这个信息有误吧（未指明具体哪条）</span>
-        </div>
-        <div class="doubt-item">
-            <span class="doubt-q">dudu</span>：浸润肌层为什么不直接做新辅助化疗，要先全切？
-            <span style="color:#b8443c;">→ 群友讨论中，尚无定论，欢迎有经验者补充</span>
-        </div>
-        <div class="doubt-item">
-            <span class="doubt-q">静待花开</span>：新辅助后二次电切病理无癌细胞，还得全切吗？
-            <span style="color:#b8443c;">→ 群内暂无一致结论，医生方案差异较大</span>
-        </div>
-        <div class="doubt-item">
-            <span class="doubt-q">dudu</span>：基因检测需要做吗？费用多少？哪里做得好？
-            <span style="color:#b8443c;">→ 上海潘认为膀胱癌基因检测意义不大，做 PD-L1 即可</span>
-        </div>
-        <div class="doubt-item">
-            <span class="doubt-q">军工品质</span>：为什么不考虑试试 ADC 保膀胱？
-            <span style="color:#b8443c;">→ 开放式问题，欢迎有 ADC 保膀胱经验者分享</span>
-        </div>
-        <div class="doubt-item" style="font-size:11.5px; color:#6b5c4a; font-style:italic;">
-            ⚠ 本版块仅记录群友当日提出的疑问和争议，不代表任何医学结论。如有错漏，欢迎指正。
+<!-- 报头 -->
+<div class="header">
+    <div class="header-top">
+        <div class="brand">湖水和<span>朋友们</span></div>
+        <div class="header-meta">
+            泌尿健康5群<br>
+            2026年6月17日<br>
+            第 27 期
         </div>
     </div>
+    <div class="tagline">· 群日报 · 每日精选 · 336条消息 ·</div>
+</div>
 
-    <div class="divider"></div>
+<!-- 导语红条 -->
+<div class="lead-bar">
+    今日群内热议：维迪西妥副作用管理与医保报销资格、卡介苗灌注反应分级、二次电切的时机与意义、HER2高表达的下一步选择，以及膀胱癌与环境污染的关系。
+</div>
 
-    <!-- 知识卡片 -->
-    <div class="section-title">📚 知识卡片 · 今日提炼</div>
-    <div class="card-grid">
-        <div class="card">
-            <div class="card-title">🫂 新辅助治疗的目的</div>
-            ① 降期肿瘤，降低手术难度<br>
-            ② 测试药物敏感性（化疗/免疫药是否有效）<br>
-            ③ 降低微转移风险<br>
-            ④ 保留膀胱功能的可能性评估
-        </div>
-        <div class="card">
-            <div class="card-title">🫂 直接全切的适用情况</div>
-            ① 浸润达肌层以上（T2+）<br>
-            ② 年龄较大、体质较差<br>
-            ③ 肿瘤范围广、多发性<br>
-            ④ 新辅助化疗 contraindicated（身体状况不允许）
-        </div>
-        <div class="card">
-            <div class="card-title">🫂 PD-L1 检测的意义</div>
-            预测免疫治疗效果：<br>
-            PD-L1 高表达 → 免疫治疗（替雷利珠、特瑞普利）效果更好<br>
-            一般不需要全套基因检测，膀胱癌靶向药有限
-        </div>
-        <div class="card">
-            <div class="card-title">🫂 EV + K药 / 替雷利珠</div>
-            EV（维恩妥尤单抗）+ 帕博利珠单抗（K药）：海外标准方案<br>
-            国产替代：EV + 替雷利珠单抗<br>
-            费用：约 16000 元/次（EV 为主，报销前）
-        </div>
-        <div class="card">
-            <div class="card-title">🫂 ADC 保膀胱的可行性</div>
-            维迪西妥单抗（ADC）联合放疗：1年 DFS 率达 95%（ASCO 2026）<br>
-            适合：不想全切、肿瘤负荷不大、PD-L1 高表达者<br>
-            需找有经验的保膀胱团队（上海仁济曹明等）
-        </div>
-        <div class="card">
-            <div class="card-title">🫂 各地治疗理念差异</div>
-            省人医（江苏）：倾向全切，机器人还不保销<br>
-            上海仁济：曹明等可做保膀胱治疗<br>
-            华西（四川）：需要多科室评估<br>
-            → 大医院多看，方案差很多
-        </div>
+<!-- 群友问答 -->
+<div class="section-title">💬 今日群友热议</div>
+
+<div class="qa-item">
+    <div class="qa-q">维迪+特瑞能报销吗？T2能用吗？</div>
+    <div class="qa-a">
+        <span class="speaker">上海潘：</span>医保范围内，但有严格要求——局部晚期或转移、用过铂类化疗、HER2 2+，各地略有不同。T2阶段不符合报销条件，自费使用。
     </div>
-
-    <div class="divider"></div>
-
-    <!-- 群友经验 -->
-    <div class="section-title">🗂 群友一线经验 · 今日分享</div>
-
-    <div class="sub-title">① 张金明：T2N0M0，EV+替雷利珠成功保膀胱</div>
-    <div class="quote-block">
-        "去年6月做的电切，EV+替雷利珠4疗程后10月二切和核磁显示无癌细胞，后面就每三周一次替雷利珠维持，3月底复查膀胱镜恢复良好，尿液细胞脱落检查阴性。医生也叫我切膀胱，我想再赌一次。"
+    <div class="qa-a" style="margin-top:5px;">
+        <span class="speaker">莹：</span>T2应该先做新辅助而非直接切除。北肿T4都不给报，遇到愿意帮患者想办法的医生是运气。
     </div>
+</div>
 
-    <div class="sub-title">② 阎平：T1G3复发后保膀胱成功5年+</div>
-    <div class="quote-block">
-        "我当时得41，复发时42。保膀胱治疗（化疗+用药），5年多了。保命比保膀胱重要，但年轻、身体条件好，保的概率高。"
+<div class="qa-item">
+    <div class="qa-q">维迪副作用这么多，坚持打还是换药？</div>
+    <div class="qa-a">
+        <span class="speaker">小云（打了20多次）：</span>效果好，就是要抗住副作用。手脚麻、下肢无力、拉肚子是常见反应。身体受不了才停的。
     </div>
-
-    <div class="sub-title">③ 无谓：吡柔比星灌注经验（周灌→月灌）</div>
-    <div class="quote-block">
-        "第8次灌，才开始小便尿痛，大量喝水后尿痛慢慢开始好。灌完吃三金片，晚上用吲哚美辛栓，2天左右缓解了。如果灌了比较严重，提前3天吃阿莫西林。"
+    <div class="qa-a" style="margin-top:5px;">
+        <span class="speaker">莹：</span>晚期只要不耐药就一直用，打50多次、20多次的都有。DVT（维迪+特瑞）给药次数看病情阶段，新辅助就是4~6次。
     </div>
-
-    <div class="sub-title">④ 贵龙：全切术后经验（机器人手术）</div>
-    <div class="quote-block">
-        "23年膀胱全切，机器人手术4个半小时，术后醒，九天出院。术前灌肠有点痛苦，为了生存坚持就是胜利。切记康复期佩带腹带，不做剧烈活动，防造口旁疝。乐观对待全切，手术做得干净彻底不用化疗、打针、吃药，一个月后该干吗干吗。"
+    <div class="qa-a" style="margin-top:5px;">
+        <span class="speaker">原（第11次）：</span>手脚指头麻木，医生说只要耐受、有效就一直打。
     </div>
+</div>
 
-    <div class="divider"></div>
-
-    <!-- 今日头条 -->
-    <div class="section-title">📊 ASCO 2026 速递 · 群友关注</div>
-
-    <div class="sub-title">① 维迪西妥单抗 + 放疗：保膀胱新方案</div>
-    <div class="quote-block">
-        李学松教授、唐琦教授：维迪西妥单抗（ADC）联合放疗策略，1年DFS率达95%，为中国UTUC带来创新辅助方案。<br>
-        → 适合：不想全切、肿瘤负荷不大、HER2阳性者
+<div class="qa-item">
+    <div class="qa-q">靶向免疫之后每个周期都要检查吗？</div>
+    <div class="qa-a">
+        <span class="speaker">望舒：</span>我们是三个月检查一次。
     </div>
+</div>
 
-    <div class="sub-title">② 特瑞普利单抗一线治疗mUC获批</div>
-    <div class="quote-block">
-        盛锡楠、张崔建教授：特瑞普利单抗一线治疗mUC获批，中国原研方案惠及中国患者，革新治疗格局。<br>
-        → EV+特瑞普利成为新的组合选择
+<div class="qa-item">
+    <div class="qa-q">EVP三周期后评估无癌，到底切还是保？</div>
+    <div class="qa-a">
+        <span class="speaker">我心飞翔：</span>切，可惜毕竟切掉就没了；保，又担心复发。目前用药效果不错，尿频血尿基本消失，还胖了4斤，但还在纠结。
     </div>
-
-    <div class="divider"></div>
-
-    <!-- 底栏 -->
-    <div class="footer">
-        <div class="footer-brand">湖水和朋友们 · 群日报</div>
-        本日报由 AI 整理群聊内容生成，仅供病友交流参考，不构成任何医疗建议。<br>
-        如需转载或引用，请注明出处。欢迎转发给需要的病友。<br>
-        反馈/建议：联系 @湖水
+    <div class="qa-a" style="margin-top:5px;">
+        <span class="speaker">望舒：</span>如果效果好，可以问医生三联疗法（EVP+放疗）保膀胱。
     </div>
+</div>
+
+<div class="qa-item">
+    <div class="qa-q">脖子淋巴结肿大挂什么科？和膀胱癌有关吗？</div>
+    <div class="qa-a">
+        <span class="speaker">上海潘：</span>哪里淋巴结挂哪里的科，脖子就去头颈外科。不大可能和膀胱癌有关，但要排查。
+    </div>
+</div>
+
+<div class="qa-item">
+    <div class="qa-q">二次电切是什么？有必要做吗？</div>
+    <div class="qa-a">
+        <span class="speaker">勇（做过二切）：</span>比第一次再深切一层，确认分期。如果首切没切干净就直接治疗，等于无效治疗。多发肿瘤容易残留。
+    </div>
+    <div class="qa-a" style="margin-top:5px;">
+        <span class="speaker">莹：</span>电切是很小的手术，不怎么遭罪，但可以降低复发，值得做。
+    </div>
+</div>
+
+<div class="qa-item">
+    <div class="qa-q">北大预约膀胱镜复查要等多久？</div>
+    <div class="qa-a">
+        <span class="speaker">燕子：</span>至少提前20天顶约。
+    </div>
+    <div class="qa-a" style="margin-top:5px;">
+        <span class="speaker">莹：</span>复查可以找好大夫App线上问诊沈益君（复肿），方便且收费便宜。
+    </div>
+</div>
+
+<!-- 群友疑问（保留争议） -->
+<div class="doubt-section">
+    <div class="doubt-title">💬 群友疑问 · 保留争议</div>
+    <div class="doubt-item">
+        <span class="doubt-q">勿扰安静：</span>多发性低级别膀胱癌用了维迪+卡介苗已11次，想继续但副作用明显，到底该不该停？
+        <span class="doubt-note">→ 莹建议咨询复肿沈益君，T1多发不是DVT常规适应症，医生方案各异</span>
+    </div>
+    <div class="doubt-item">
+        <span class="doubt-q">一休：</span>这两年得癌的人变多，和新冠疫苗有没有关系？
+        <span class="doubt-note">→ 群内讨论分歧，目前无定论，莹认为更可能是油烟、二手烟等环境因素</span>
+    </div>
+    <div class="doubt-item">
+        <span class="doubt-q">cctv中央一套：</span>怀疑病理不准，能否三次电切？
+        <span class="doubt-note">→ 开放式问题，群内暂无一致答案，一般以两次电切为标准</span>
+    </div>
+    <div class="doubt-item">
+        <span class="doubt-q">莹：</span>膀胱癌治疗期间（卡介苗灌注中）可以打带状疱疹疫苗吗？
+        <span class="doubt-note">→ 上海潘建议灌注完再说，不着急；目前无权威答案</span>
+    </div>
+    <div class="doubt-footer">⚠ 本版块仅记录群友当日提出的疑问和争议，不代表任何医学结论。如有错漏，欢迎指正。</div>
+</div>
+
+<!-- 知识卡片 -->
+<div class="divider"></div>
+<div class="section-title">📚 今日知识卡片</div>
+<div class="cards-grid">
+    <div class="card">
+        <div class="card-title">DVT是什么？</div>
+        <div class="card-body">DVT = 维迪西妥（D）+ 特瑞普利（T）联合用药方案。常见于局部晚期或转移性膀胱癌二线治疗，医保报销有严格条件。</div>
+    </div>
+    <div class="card">
+        <div class="card-title">维迪副作用管理</div>
+        <div class="card-body">常见：手脚麻木、下肢无力、腹泻、皮疹、味觉消失。应对：益生菌+蒙脱石散控腹泻，氯雷他定止痒，蛋白粉补营养，多与医生沟通。</div>
+    </div>
+    <div class="card">
+        <div class="card-title">二次电切的意义</div>
+        <div class="card-body">首切未切净则治疗无效。二切可确认病理分期，尤其多发肿瘤。T1G2有时可不做，但T1G3及以上强烈推荐。</div>
+    </div>
+    <div class="card">
+        <div class="card-title">HER2与报销</div>
+        <div class="card-body">HER2 2+是维迪西妥医保报销的必要条件之一。3+表达更高，联合DVT方案理论上疗效更好，但各地报销政策有差异。</div>
+    </div>
+    <div class="card">
+        <div class="card-title">BCG第3次灌注</div>
+        <div class="card-body">尿频、尿急、尿痛、少量血尿在第3~4次灌注时最为强烈，属正常免疫反应，多喝水、卧床休息。盼盼：第9次还在发烧39.7℃，熬过来了。</div>
+    </div>
+    <div class="card">
+        <div class="card-title">淋巴结肿大挂科</div>
+        <div class="card-body">哪里的淋巴结挂哪里的科：颈部→头颈外科；腹股沟→血管外科或普外科。颈部淋巴肿大一般与膀胱癌无直接关联，但需排查。</div>
+    </div>
+</div>
+
+<!-- 群内动态 -->
+<div class="divider"></div>
+<div class="section-title">📰 群内动态</div>
+
+<div class="news-item">
+    <span class="news-tag">新成员</span>黑龙飞（由武介绍）加入5群，目前处于半年随访期，有前列腺增生及尿频困扰。欢迎！
+</div>
+<div class="news-item">
+    <span class="news-tag">新成员</span>Zzz弓长长（由陈琴介绍）加入5群。欢迎！
+</div>
+<div class="news-item">
+    <span class="news-tag">环境话题</span>勇发起讨论：工厂多位三四十岁同事相继住院，认为发病与工作环境有关。群友延伸讨论食用油、油烟致癌话题。
+</div>
+<div class="news-item">
+    <span class="news-tag">提醒</span>群主发布：《卡介苗灌注你知道哪次有效哪次没效吗？》文章及IMA知识库测验，欢迎参与。
+</div>
+<div class="news-item">
+    <span class="news-tag">好消息</span>莹：据说明年DVT医保条件会进一步放宽，期待落地。
+</div>
+
+<!-- 群友故事 -->
+<div class="divider"></div>
+<div class="section-title">🌿 群友一线记录</div>
+
+<div class="story-item">
+    <div class="story-speaker">我心飞翔（EVP第3周期第1次）</div>
+    第一次用药后味觉消失，吃啥都像泥巴；腹泻最多一天5~6趟，但肚子不疼。治疗至今尿频由每小时1次改善到每2小时1次，体重还增加了4斤。"知道饿，反正饿了就吃，吃饱为止。"
+</div>
+
+<div class="story-item">
+    <div class="story-speaker">盼盼（BCG第9次灌注）</div>
+    昨天第9次卡介苗灌注后发烧至39.7℃，持续10多小时，今天已恢复正常活动。连续9次，一次不落。
+</div>
+
+<div class="story-item">
+    <div class="story-speaker">我是空格（父亲，T2 HER2 3+）</div>
+    影像显示浅表，切出来是T2，连医生都很惊讶。被东肿直接推荐维迪+特瑞，担心报销问题来群里找答案。群友建议问问医生能否帮想办法，"有枣没枣打三杆子"。
+</div>
+
+<!-- 底栏 -->
+<div class="footer">
+    <div class="footer-logo">湖水和<span>朋友们</span></div>
+    <div>泌尿健康5群 · 2026年6月17日日报</div>
+    <div style="margin-top:6px; font-size:10.5px; color:#7a6a58;">
+        本日报由群聊天记录整理而成，仅供参考，不代表医学建议。<br>
+        如有个案问题，请咨询专业医生。
+    </div>
+    <div style="margin-top:6px; font-size:10px; color:#555;">
+        © 2026 湖水和朋友们 · zhao2jun.github.io
+    </div>
+</div>
 
 </body>
 </html>
